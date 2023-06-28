@@ -27,10 +27,10 @@ namespace Characters
             _characterAnimation = GetComponentInChildren<CharacterAnimation>();
         }
 
-        private void Start()
+        /*private void Start()
         {
             _characterAnimation.Init();
-        }
+        }*/
         
         #region Movement
 

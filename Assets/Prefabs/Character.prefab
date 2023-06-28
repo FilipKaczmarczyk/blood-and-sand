@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 5598070405367242321}
   - component: {fileID: 5934924967962819142}
   - component: {fileID: 4491415179625658709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ Transform:
   - {fileID: 9187471601265997932}
   - {fileID: 1552919405003279863}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &4672483151081140250
 CapsuleCollider:
@@ -382,6 +382,7 @@ MonoBehaviour:
   rollInput: 0
   lightAttackInput: 0
   heavyAttackInput: 0
+  comboFlag: 0
   rollFlag: 0
 --- !u!114 &6583214908871760461
 MonoBehaviour:
@@ -411,6 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInteracting: 0
+  canDoCombo: 0
 --- !u!114 &5598070405367242321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e11de2c6c0595e4792c7f88be6265f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastAttack: 
 --- !u!114 &4491415179625658709
 MonoBehaviour:
   m_ObjectHideFlags: 0

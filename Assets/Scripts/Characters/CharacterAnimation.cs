@@ -3,11 +3,10 @@ using UnityEngine;
 
 namespace Characters
 {
-    public class CharacterAnimation : MonoBehaviour
+    public class CharacterAnimation : AnimatorManager
     {
         [field:SerializeField] public bool CanRotate { get; private set; }
-        public Animator Anim { get; private set; }
-
+        
         private CharacterManager _characterManager;
         private InputHandler _inputHandler;
         private CharacterMovement _characterMovement;
@@ -16,10 +15,10 @@ namespace Characters
         private int _horizontal;
         private static readonly int CanDoCombo = Animator.StringToHash("CanDoCombo");
 
-        public void Init()
+        public override void Awake()
         {
-            Anim = GetComponent<Animator>();
-
+            base.Awake();
+            
             _characterManager = GetComponentInParent<CharacterManager>();
             _inputHandler = GetComponentInParent<InputHandler>();
             _characterMovement = GetComponentInParent<CharacterMovement>();
@@ -87,14 +86,7 @@ namespace Characters
             Anim.SetFloat(_vertical, v, 0.1f, Time.deltaTime);
             Anim.SetFloat(_horizontal, h, 0.1f, Time.deltaTime);
         }
-
-        public void PlayTargetAnimation(string targetAnim, bool isInteracting)
-        {
-            Anim.applyRootMotion = isInteracting;
-            Anim.SetBool("IsInteracting", isInteracting);
-            Anim.CrossFade(targetAnim, 0.2f);
-        }
-
+        
         public void StartRotate()
         {
             CanRotate = true;
